@@ -41,3 +41,6 @@ Route::get('authors/{author:username}', function (User $author) {
 
 
 Route::get('register', [RegisterController::class, 'create']);
+
+Route::post('register', [RegisterController::class, 'store']);
+

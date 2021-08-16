@@ -3,6 +3,22 @@
         <main class="max-w-lg mx-auto mt-20">
             <h1 class="font-bold text-center mb-6 text-xl"><b>Create an account</b></h1>
             <form method="POST" action="/register" class="mt-10">
+
+            @csrf
+                <div class="mb-6">
+                    <lable class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                            for="name"
+                    >Name
+                    </lable>
+
+                    <input class="bg-blue-50 border border-gray-400 p-2 w-full"
+                           type="text" 
+                           name="name" 
+                           id="name"
+                           required
+                    >
+                </div>
+
                 <div class="mb-6">
                     <lable class="block mb-2 uppercase font-bold text-xs text-gray-700"
                             for="username"
@@ -48,7 +64,7 @@
                  <div class="mb-6">
                     <button class="mx-auto bg-blue-400 border border-gray-300 text-white py-2 px-4 rounded hover:bg-blue-500"
                             type="submit"
-                    >Email
+                    >SUBMIT
                     </lable>
                  </div>
 
