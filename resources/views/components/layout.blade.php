@@ -17,15 +17,18 @@
                 </a>
             </div>
 
-            <div class="mt-8 md:mt-0">
+            <div class="mt-8 md:mt-0 flex">
 
                 @auth
-                    <span class="text-xs font-bold uppercase flex">Welcome, {{ auth()->user()->name }}!</a>
+                    <div class="flex items-center">
+                         <span class="text-xs font-bold uppercase flex">Welcome, {{ auth()->user()->name }}!</a>
 
-                    <form method="POST" action="/logout" class="flex text-xs font-semibold text-blue-500 ml-6">
-                        @csrf
-                        <button type="submit">Log Out</button>
-                    </form>    
+                        <form method="POST" action="/logout" class="flex text-xs font-semibold text-blue-500 ml-6">
+                            @csrf
+                            <button type="submit">Log Out</button>
+                        </form>    
+                    </div>
+                   
 
                 @else 
                     <a href="/register" class="text-xs font-bold uppercase">Register</a>
