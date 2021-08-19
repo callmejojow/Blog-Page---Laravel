@@ -31,8 +31,10 @@
                    
 
                 @else 
-                    <a href="/register" class="text-xs font-bold uppercase">Register</a>
-                    <a href="/login" class="ml-5 mr-5 text-xs font-bold uppercase">Login</a>
+                    <div class="flex items-center">
+                        <a href="/register" class="text-xs font-bold uppercase">Register</a>
+                        <a href="/login" class="ml-5 mr-5 text-xs font-bold uppercase">Login</a>
+                    </div>
                 @endauth
 
                 <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
