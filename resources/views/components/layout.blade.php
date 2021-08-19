@@ -1,9 +1,12 @@
 <!doctype html>
-
+<html>
+<head>
 <title>Laravel From Scratch Blog</title>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+</head>
 
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
@@ -15,7 +18,19 @@
             </div>
 
             <div class="mt-8 md:mt-0">
-                <a href="/" class="text-xs font-bold uppercase">Home Page</a>
+
+                @auth
+                    <span class="text-xs font-bold uppercase flex">Welcome, {{ auth()->user()->name }}!</a>
+
+                    <form method="POST" action="/logout" class="flex text-xs font-semibold text-blue-500 ml-6">
+                        @csrf
+                        <button type="submit">Log Out</button>
+                    </form>    
+
+                @else 
+                    <a href="/register" class="text-xs font-bold uppercase">Register</a>
+                    <a href="/login" class="ml-5 mr-5 text-xs font-bold uppercase">Login</a>
+                @endauth
 
                 <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
                     Subscribe for Updates
@@ -52,5 +67,7 @@
                 </div>
             </div>
         </footer>
+        <x-flash />
     </section>
 </body>
+</html>
