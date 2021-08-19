@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Validation\Rule;
-use Illuminate\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
